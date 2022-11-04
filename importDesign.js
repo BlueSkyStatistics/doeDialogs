@@ -42,12 +42,10 @@ class importDesign extends baseModal {
             label: localization.en.title,
             modalType: "one",
             RCode: `
-			require(DoE.base)
-			
-                    {{selected.datasetname | safe}} <- DoE.base::add.response({{dataset.name}},  "{{selected.importResp | safe}}", replace=FALSE)
-					
-                    BSkyLoadRefresh('{{selected.datasetname | safe}}')
-                `
+require(DoE.base)
+{{selected.datasetname | safe}} <- DoE.base::add.response({{dataset.name}},  "{{selected.importResp | safe}}", replace=FALSE)
+BSkyLoadRefresh('{{selected.datasetname | safe}}')
+`
         }
         var objects = {
             datasetname: {
@@ -67,7 +65,8 @@ class importDesign extends baseModal {
                     {
                         no: "importResp", 
                         label: localization.en.importResp,
-                        extraction: "TextAsIs"
+                        extraction: "TextAsIs",
+                        required:true
                     })}
             // importResp: {
             //     el: new input(config, {

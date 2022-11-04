@@ -57,7 +57,8 @@ class exportDesign extends baseModal {
                         no: "exportPath", 
                         label: localization.en.exportPath, 
                         type: 'folder', 
-                        extraction: "TextAsIs"
+                        extraction: "TextAsIs",
+                        required:true
                     })},
         }
         const content = {
